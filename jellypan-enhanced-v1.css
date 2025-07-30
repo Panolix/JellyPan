@@ -1,0 +1,381 @@
+/*
+ * JellyPan Enhanced v1 - Deep Space Advanced
+ * 
+ * Advanced Jellyfin theme inspired by modern UI design
+ * Features: Glassmorphism, advanced shadows, smooth animations
+ */
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+    /* Deep Space Color Palette */
+    --accent-color: #ffffff;
+    --accent-color-hover: #e5e5e7;
+    --accent-secondary: #f0f0f0;
+    --background-primary: #050505;
+    --background-secondary: #0f0f0f;
+    --background-tertiary: #1a1a1a;
+    --background-elevated: #252525;
+    
+    /* Text Colors */
+    --text-primary: #ffffff;
+    --text-secondary: #f2f2f7;
+    --text-muted: #8e8e93;
+    --text-disabled: #48484a;
+    
+    /* Glass and Surface Colors */
+    --glass-background: rgba(255, 255, 255, 0.05);
+    --glass-border: rgba(255, 255, 255, 0.1);
+    --card-background: rgba(15, 15, 15, 0.8);
+    --card-hover: rgba(25, 25, 25, 0.9);
+    --border-color: rgba(255, 255, 255, 0.08);
+    
+    /* Shadows */
+    --shadow-small: 0 2px 8px rgba(0, 0, 0, 0.3);
+    --shadow-medium: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --shadow-large: 0 16px 64px rgba(0, 0, 0, 0.5);
+    --shadow-glow: 0 0 20px rgba(255, 255, 255, 0.1);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--background-secondary), var(--background-tertiary));
+    --gradient-card: linear-gradient(145deg, rgba(255,255,255,0.03), rgba(255,255,255,0.01));
+    --gradient-accent: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+    
+    /* Border Radius */
+    --radius-small: 8px;
+    --radius-medium: 12px;
+    --radius-large: 16px;
+    --radius-xl: 24px;
+    
+    /* Transitions */
+    --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ===== GLOBAL STYLES ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'SF Pro Display', Roboto, sans-serif;
+    background: var(--background-primary);
+    color: var(--text-primary);
+    overflow-x: hidden;
+    line-height: 1.6;
+    font-weight: 400;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== BACKDROP AND GLASSMORPHISM ===== */
+.backdrop {
+    backdrop-filter: blur(20px) saturate(180%);
+    background: var(--glass-background);
+    border: 1px solid var(--glass-border);
+}
+
+/* ===== ENHANCED SIDEBAR ===== */
+.mainDrawer-scrollContainer,
+.navMenuOption-mainDrawer {
+    background: var(--glass-background) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    border-right: 1px solid var(--glass-border) !important;
+    box-shadow: var(--shadow-medium) !important;
+}
+
+.navMenuOption {
+    margin: 4px 8px !important;
+    border-radius: var(--radius-medium) !important;
+    transition: all var(--transition-normal) !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
+.navMenuOption:hover {
+    background: var(--card-hover) !important;
+    transform: translateX(4px) !important;
+    box-shadow: var(--shadow-small) !important;
+}
+
+.navMenuOption.navMenuOption-selected {
+    background: var(--gradient-accent) !important;
+    color: var(--background-primary) !important;
+    box-shadow: var(--shadow-glow) !important;
+}
+
+.navMenuOption::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.1), transparent);
+    transition: left var(--transition-slow);
+}
+
+.navMenuOption:hover::before {
+    left: 100%;
+}
+
+/* ===== ENHANCED CARDS ===== */
+.card,
+.cardBox {
+    background: var(--gradient-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-large) !important;
+    box-shadow: var(--shadow-medium) !important;
+    transition: all var(--transition-normal) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.card:hover,
+.cardBox:hover {
+    transform: translateY(-8px) scale(1.02) !important;
+    box-shadow: var(--shadow-large) !important;
+    border-color: var(--accent-color) !important;
+}
+
+.cardImageContainer {
+    border-radius: var(--radius-medium) !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.cardImageContainer::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(180deg, transparent 0%, rgba(0,0,0,0.3) 100%);
+    opacity: 0;
+    transition: opacity var(--transition-normal);
+}
+
+.card:hover .cardImageContainer::after {
+    opacity: 1;
+}
+
+/* ===== ENHANCED BUTTONS ===== */
+.button-flat,
+.button-submit,
+.raised {
+    background: var(--gradient-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-medium) !important;
+    color: var(--text-primary) !important;
+    font-weight: 500 !important;
+    transition: all var(--transition-normal) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.button-flat:hover,
+.button-submit:hover,
+.raised:hover {
+    background: var(--gradient-accent) !important;
+    color: var(--background-primary) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: var(--shadow-medium) !important;
+}
+
+.button-submit {
+    background: var(--gradient-accent) !important;
+    color: var(--background-primary) !important;
+    font-weight: 600 !important;
+}
+
+/* ===== ENHANCED HEADER ===== */
+.skinHeader {
+    background: var(--glass-background) !important;
+    backdrop-filter: blur(20px) saturate(180%) !important;
+    border-bottom: 1px solid var(--glass-border) !important;
+    box-shadow: var(--shadow-small) !important;
+}
+
+.headerTop {
+    padding: 16px 24px !important;
+}
+
+/* ===== ENHANCED CONTENT AREAS ===== */
+.mainAnimatedPage {
+    background: var(--gradient-primary) !important;
+    min-height: 100vh !important;
+}
+
+.verticalSection {
+    margin: 24px 0 !important;
+    padding: 0 24px !important;
+}
+
+.sectionTitle {
+    color: var(--text-primary) !important;
+    font-weight: 600 !important;
+    font-size: 24px !important;
+    margin-bottom: 16px !important;
+    position: relative !important;
+}
+
+.sectionTitle::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 40px;
+    height: 2px;
+    background: var(--accent-color);
+    border-radius: 1px;
+}
+
+/* ===== ENHANCED SCROLLBARS ===== */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-secondary);
+    border-radius: var(--radius-small);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--gradient-accent);
+    border-radius: var(--radius-small);
+    border: 2px solid var(--background-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}
+
+/* ===== ENHANCED FORMS ===== */
+.inputContainer {
+    position: relative !important;
+    margin: 16px 0 !important;
+}
+
+.emby-input {
+    background: var(--glass-background) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-medium) !important;
+    color: var(--text-primary) !important;
+    padding: 12px 16px !important;
+    transition: all var(--transition-normal) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.emby-input:focus {
+    border-color: var(--accent-color) !important;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1) !important;
+    outline: none !important;
+}
+
+/* ===== ENHANCED MEDIA DETAILS ===== */
+.detailImageContainer {
+    border-radius: var(--radius-large) !important;
+    overflow: hidden !important;
+    box-shadow: var(--shadow-large) !important;
+    position: relative !important;
+}
+
+.detailImageContainer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(255,255,255,0.1), transparent);
+    z-index: 1;
+}
+
+.itemDetailPage {
+    background: var(--gradient-primary) !important;
+}
+
+.detailSection {
+    background: var(--gradient-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--radius-large) !important;
+    padding: 24px !important;
+    margin: 16px 0 !important;
+    backdrop-filter: blur(10px) !important;
+    box-shadow: var(--shadow-medium) !important;
+}
+
+/* ===== ENHANCED ANIMATIONS ===== */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes glow {
+    0%, 100% { box-shadow: var(--shadow-medium); }
+    50% { box-shadow: var(--shadow-glow); }
+}
+
+.card,
+.cardBox {
+    animation: slideInUp var(--transition-normal) ease-out;
+}
+
+.navMenuOption-selected {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* ===== RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .verticalSection {
+        padding: 0 16px !important;
+    }
+    
+    .headerTop {
+        padding: 12px 16px !important;
+    }
+    
+    .detailSection {
+        margin: 12px 0 !important;
+        padding: 16px !important;
+    }
+}
+
+/* ===== ENHANCED PLAYER CONTROLS ===== */
+.videoOsdBottom {
+    background: linear-gradient(transparent, rgba(0,0,0,0.8)) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.osdControls {
+    background: var(--glass-background) !important;
+    border: 1px solid var(--glass-border) !important;
+    border-radius: var(--radius-large) !important;
+    backdrop-filter: blur(20px) !important;
+    box-shadow: var(--shadow-medium) !important;
+}
+
+.mdl-slider-background-lower {
+    background: var(--accent-color) !important;
+}
+
+.mdl-slider-background-upper {
+    background: rgba(255, 255, 255, 0.2) !important;
+}
