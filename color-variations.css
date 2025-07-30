@@ -5,7 +5,7 @@
  * Copy and paste one of these into the root variables section
  */
 
-/* ===== APPLE SPACE GREY ===== */
+/* ===== APPLE SPACE GREY (Blue) ===== */
 /*
 :root {
     --accent-color: #007aff;
@@ -22,28 +22,11 @@
 }
 */
 
-/* ===== APPLE SILVER ===== */
+/* ===== APPLE MIDNIGHT (Blue) ===== */
 /*
 :root {
     --accent-color: #007aff;
     --accent-color-hover: #0056cc;
-    --background-primary: #f2f2f7;
-    --background-secondary: #ffffff;
-    --background-tertiary: #e5e5ea;
-    --text-primary: #000000;
-    --text-secondary: #1c1c1e;
-    --text-muted: #8e8e93;
-    --card-background: #ffffff;
-    --card-hover: #f2f2f7;
-    --border-color: #c6c6c8;
-}
-*/
-
-/* ===== APPLE MIDNIGHT ===== */
-/*
-:root {
-    --accent-color: #30d158;
-    --accent-color-hover: #28cd4f;
     --background-primary: #000000;
     --background-secondary: #1c1c1e;
     --background-tertiary: #2c2c2e;
@@ -56,11 +39,28 @@
 }
 */
 
-/* ===== APPLE GRAPHITE ===== */
+/* ===== APPLE SPACE GREY (Jellyfin Purple) ===== */
 /*
 :root {
-    --accent-color: #ff9f0a;
-    --accent-color-hover: #ff8c00;
+    --accent-color: #aa5cc3;
+    --accent-color-hover: #9644a8;
+    --background-primary: #1c1c1e;
+    --background-secondary: #2c2c2e;
+    --background-tertiary: #3a3a3c;
+    --text-primary: #ffffff;
+    --text-secondary: #ebebf5;
+    --text-muted: #8e8e93;
+    --card-background: #2c2c2e;
+    --card-hover: #3a3a3c;
+    --border-color: #48484a;
+}
+*/
+
+/* ===== APPLE GRAPHITE (Jellyfin Purple) ===== */
+/*
+:root {
+    --accent-color: #aa5cc3;
+    --accent-color-hover: #9644a8;
     --background-primary: #1d1d1f;
     --background-secondary: #2d2d30;
     --background-tertiary: #424245;
