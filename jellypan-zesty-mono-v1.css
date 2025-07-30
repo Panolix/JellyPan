@@ -1,0 +1,339 @@
+/*
+ * JellyPan Zesty Mono v1 - Pure White
+ * 
+ * Inspired by ZestyTheme's design language but in pure monochrome
+ * Features: Rounded corners, card scaling, backdrop effects, clean typography
+ */
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+
+/* ===== ROOT VARIABLES ===== */
+:root {
+    /* Monochrome Palette */
+    --accent-color: #ffffff !important;
+    --accent-color-hover: #f0f0f0 !important;
+    --background-primary: #000000 !important;
+    --background-secondary: #111111 !important;
+    --background-tertiary: #222222 !important;
+    --background-card: #1a1a1a !important;
+    --background-elevated: #2a2a2a !important;
+    
+    /* Text Colors */
+    --text-primary: #ffffff !important;
+    --text-secondary: #e0e0e0 !important;
+    --text-muted: #a0a0a0 !important;
+    --text-disabled: #606060 !important;
+    
+    /* ZestyTheme-inspired Rounding */
+    --rounding: 12px !important;
+    --rounding-alt: 9px !important;
+    --rounding-large: 24px !important;
+    --rounding-circle: 100px !important;
+    
+    /* Monochrome Borders */
+    --border-color: rgba(255, 255, 255, 0.1) !important;
+    --border-hover: rgba(255, 255, 255, 0.2) !important;
+    --border-focus: rgba(255, 255, 255, 0.4) !important;
+    
+    /* Sophisticated Shadows */
+    --shadow-subtle: 0 2px 8px rgba(0, 0, 0, 0.3) !important;
+    --shadow-medium: 0 8px 24px rgba(0, 0, 0, 0.4) !important;
+    --shadow-strong: 0 16px 48px rgba(0, 0, 0, 0.5) !important;
+    --shadow-dramatic: 0 24px 64px rgba(0, 0, 0, 0.6) !important;
+}
+
+/* ===== ZESTY TYPOGRAPHY ===== */
+body, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Quicksand', -apple-system, BlinkMacSystemFont, sans-serif !important;
+}
+
+body {
+    background: var(--background-primary) !important;
+    color: var(--text-primary) !important;
+    font-weight: 400 !important;
+}
+
+h1, .pageTitle {
+    font-weight: 600 !important;
+    letter-spacing: -0.02em !important;
+}
+
+h2, .sectionTitle {
+    font-weight: 500 !important;
+    letter-spacing: -0.01em !important;
+}
+
+h3 {
+    font-weight: 500 !important;
+}
+
+/* ===== ZESTY BACKDROP EFFECTS ===== */
+.backdropImage {
+    filter: blur(6px) saturate(120%) contrast(120%) brightness(40%) !important;
+}
+
+.backgroundContainer {
+    background-size: cover !important;
+    position: fixed !important;
+    opacity: 1 !important;
+}
+
+/* ===== ZESTY CARD SYSTEM ===== */
+.card,
+.cardBox,
+.itemsContainer .card {
+    background: var(--background-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--rounding) !important;
+    box-shadow: var(--shadow-medium) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.card:hover,
+.cardBox:hover,
+.card.show-animation:focus > .cardBox {
+    transform: scale(1.1) !important;
+    box-shadow: var(--shadow-dramatic) !important;
+    border-color: var(--border-hover) !important;
+    background: var(--background-elevated) !important;
+}
+
+.card:focus,
+.cardBox:focus {
+    transform: scale(1.1) !important;
+    outline: none !important;
+    border-color: var(--border-focus) !important;
+}
+
+/* ===== ZESTY CARD IMAGES ===== */
+.cardImageContainer {
+    border-radius: var(--rounding-alt) !important;
+    overflow: hidden !important;
+    position: relative !important;
+}
+
+.cardImage {
+    transition: transform 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.cardImageContainer:hover .cardImage {
+    transform: scale(1.05) !important;
+}
+
+/* ===== ZESTY BUTTONS ===== */
+.button-flat,
+.emby-button,
+.raised,
+.btnPlay {
+    background: var(--background-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--rounding) !important;
+    color: var(--text-primary) !important;
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 500 !important;
+    padding: 12px 24px !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    backdrop-filter: blur(10px) !important;
+}
+
+.button-flat:hover,
+.emby-button:hover,
+.raised:hover {
+    background: var(--background-elevated) !important;
+    border-color: var(--border-hover) !important;
+    transform: translateY(-2px) scale(1.02) !important;
+    box-shadow: var(--shadow-medium) !important;
+}
+
+/* Prominent Play Button (ZestyTheme style) */
+.btnPlay,
+.button-submit {
+    background: var(--accent-color) !important;
+    color: var(--background-primary) !important;
+    border-color: var(--accent-color) !important;
+    font-weight: 600 !important;
+    box-shadow: var(--shadow-strong) !important;
+}
+
+.btnPlay:hover,
+.button-submit:hover {
+    background: var(--accent-color-hover) !important;
+    transform: translateY(-3px) scale(1.05) !important;
+    box-shadow: var(--shadow-dramatic) !important;
+}
+
+/* ===== ZESTY SIDEBAR ===== */
+.mainDrawer,
+.navDrawer {
+    background: var(--background-secondary) !important;
+    border-right: 1px solid var(--border-color) !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+.navMenuOption {
+    margin: 4px 8px !important;
+    border-radius: var(--rounding-alt) !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 500 !important;
+}
+
+.navMenuOption:hover {
+    background: var(--background-card) !important;
+    transform: translateX(4px) scale(1.02) !important;
+    border-radius: var(--rounding) !important;
+}
+
+.navMenuOption.navMenuOption-selected {
+    background: var(--accent-color) !important;
+    color: var(--background-primary) !important;
+    font-weight: 600 !important;
+    border-radius: var(--rounding) !important;
+}
+
+/* ===== ZESTY FORMS ===== */
+.emby-input,
+.emby-textarea,
+.emby-select {
+    background: var(--background-card) !important;
+    border: 1px solid var(--border-color) !important;
+    border-radius: var(--rounding) !important;
+    color: var(--text-primary) !important;
+    font-family: 'Quicksand', sans-serif !important;
+    padding: 12px 16px !important;
+    transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+}
+
+.emby-input:focus,
+.emby-textarea:focus,
+.emby-select:focus {
+    border-color: var(--border-focus) !important;
+    box-shadow: 0 0 0 3px rgba(255, 255, 255, 0.1) !important;
+    outline: none !important;
+    background: var(--background-elevated) !important;
+}
+
+/* ===== ZESTY HEADER ===== */
+.skinHeader {
+    background: var(--background-secondary) !important;
+    border-bottom: 1px solid var(--border-color) !important;
+    backdrop-filter: blur(20px) !important;
+}
+
+.skinHeader-withBackground {
+    background-color: transparent !important;
+}
+
+/* ===== ZESTY CONTENT AREAS ===== */
+.mainAnimatedPage {
+    background: var(--background-primary) !important;
+}
+
+.pageContainer {
+    padding: 24px !important;
+}
+
+.verticalSection {
+    margin: 32px 0 !important;
+}
+
+.sectionTitle {
+    font-family: 'Quicksand', sans-serif !important;
+    font-weight: 600 !important;
+    margin-bottom: 20px !important;
+}
+
+/* ===== ZESTY DETAIL PAGES ===== */
+.detailImageContainer {
+    border-radius: var(--rounding-large) !important;
+    overflow: hidden !important;
+    box-shadow: var(--shadow-strong) !important;
+}
+
+.itemDetailPage {
+    background: var(--background-primary) !important;
+}
+
+.detailPageWrapperContainer {
+    margin-top: -89vh !important;
+}
+
+.detailLogo {
+    height: 16vh !important;
+    position: absolute !important;
+    right: 25vw !important;
+    top: 10vh !important;
+    width: 34em !important;
+}
+
+/* ===== ZESTY PROGRESS BARS ===== */
+.itemProgressBar {
+    background: var(--background-tertiary) !important;
+    border-radius: var(--rounding-circle) !important;
+    overflow: hidden !important;
+}
+
+.itemProgressBarForeground {
+    background: var(--accent-color) !important;
+    border-radius: var(--rounding-circle) !important;
+}
+
+/* ===== ZESTY SCROLLBARS ===== */
+::-webkit-scrollbar {
+    width: 8px !important;
+    height: 8px !important;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--background-secondary) !important;
+    border-radius: var(--rounding-alt) !important;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-color) !important;
+    border-radius: var(--rounding-alt) !important;
+    transition: background 0.3s ease !important;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color-hover) !important;
+}
+
+/* ===== ZESTY RESPONSIVE DESIGN ===== */
+@media (max-width: 768px) {
+    .pageContainer {
+        padding: 16px !important;
+    }
+    
+    .verticalSection {
+        margin: 24px 0 !important;
+    }
+    
+    .card:hover,
+    .cardBox:hover {
+        transform: scale(1.05) !important;
+    }
+}
+
+/* ===== ZESTY ACCESSIBILITY ===== */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .card:hover,
+    .cardBox:hover {
+        transform: none !important;
+    }
+}
+
+/* ===== ZESTY FOCUS STATES ===== */
+*:focus-visible {
+    outline: 2px solid var(--accent-color) !important;
+    outline-offset: 2px !important;
+    border-radius: var(--rounding-alt) !important;
+}

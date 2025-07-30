@@ -558,39 +558,8 @@
             border-radius: 8px;
             cursor: pointer;
         }
-        /* Include the JellyPan theme CSS */
-        /*
-         * JellyPan - A Minimalist Jellyfin Theme
-         * 
-         * A clean, modern, and minimalist theme for Jellyfin
-         * Focus on content with reduced visual clutter
-         */
-
-        /* ===== ROOT VARIABLES ===== */
-        :root {
-            /* Primary Colors - Apple Space Grey Theme */
-            --accent-color: #ffffff;
-            --accent-color-hover: #e5e5e7;
-            --background-primary: #1c1c1e;
-            --background-secondary: #2c2c2e;
-            --background-tertiary: #3a3a3c;
-            
-            /* Text Colors */
-            --text-primary: #ffffff;
-            --text-secondary: #ebebf5;
-            --text-muted: #8e8e93;
-            
-            /* Card and Surface Colors */
-            --card-background: #2c2c2e;
-            --card-hover: #3a3a3c;
-            --border-color: #48484a;
-            
-            /* Transparency */
-            --backdrop-opacity: 0.85;
-            --card-opacity: 0.95;
-        }
-
-        /* ===== RESET AND BASE STYLES ===== */
+        
+        /* Base Jellyfin-like structure that themes will override */
         * {
             margin: 0;
             padding: 0;
@@ -599,36 +568,11 @@
 
         body {
             font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-            background: var(--background-primary);
-            color: var(--text-primary);
+            background: #181818;
+            color: #ffffff;
             overflow-x: hidden;
         }
 
-        /* ===== GLOBAL STYLES ===== */
-        * {
-            scrollbar-width: thin;
-            scrollbar-color: var(--accent-color) transparent;
-        }
-
-        *::-webkit-scrollbar {
-            width: 8px;
-            height: 8px;
-        }
-
-        *::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        *::-webkit-scrollbar-thumb {
-            background: var(--accent-color);
-            border-radius: 4px;
-        }
-
-        *::-webkit-scrollbar-thumb:hover {
-            background: var(--accent-color-hover);
-        }
-
-        /* ===== LAYOUT STRUCTURE ===== */
         .app-container {
             display: flex;
             height: 100vh;
@@ -636,8 +580,8 @@
 
         .sidebar {
             width: 250px;
-            background: var(--background-secondary);
-            border-right: 1px solid var(--border-color);
+            background: #2c2c2e;
+            border-right: 1px solid #48484a;
             padding: 20px 0;
             overflow-y: auto;
         }
@@ -650,9 +594,9 @@
         }
 
         .header {
-            background: rgba(15, 15, 15, var(--backdrop-opacity));
+            background: rgba(15, 15, 15, 0.85);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid #48484a;
             padding: 15px 30px;
             display: flex;
             align-items: center;
@@ -663,15 +607,14 @@
             flex: 1;
             padding: 30px;
             overflow-y: auto;
-            background: var(--background-primary);
+            background: #181818;
         }
 
-        /* ===== SIDEBAR NAVIGATION ===== */
         .logo {
             padding: 0 20px 30px;
             font-size: 24px;
             font-weight: 600;
-            color: var(--accent-color);
+            color: #ffffff;
             text-align: center;
         }
 
@@ -687,21 +630,21 @@
             display: flex;
             align-items: center;
             padding: 12px 16px;
-            color: var(--text-secondary);
+            color: #ebebf5;
             text-decoration: none;
             border-radius: 8px;
             transition: all 0.2s ease;
         }
 
         .nav-link:hover {
-            background: var(--card-hover);
+            background: #3a3a3c;
             transform: translateX(4px);
-            color: var(--text-primary);
+            color: #ffffff;
         }
 
         .nav-link.active {
-            background: var(--accent-color);
-            color: white;
+            background: #ffffff;
+            color: #000000;
         }
 
         .nav-icon {
@@ -711,7 +654,6 @@
             opacity: 0.7;
         }
 
-        /* ===== HEADER ===== */
         .header-title {
             font-size: 20px;
             font-weight: 300;
@@ -725,40 +667,39 @@
         }
 
         .search-box {
-            background: var(--background-secondary);
-            border: 1px solid var(--border-color);
+            background: #2c2c2e;
+            border: 1px solid #48484a;
             border-radius: 8px;
             padding: 8px 16px;
-            color: var(--text-primary);
+            color: #ffffff;
             width: 300px;
             transition: all 0.2s ease;
         }
 
         .search-box:focus {
             outline: none;
-            border-color: var(--accent-color);
-            box-shadow: 0 0 0 2px rgba(0, 164, 220, 0.2);
+            border-color: #ffffff;
+            box-shadow: 0 0 0 2px rgba(255, 255, 255, 0.2);
         }
 
         .user-avatar {
             width: 36px;
             height: 36px;
             border-radius: 50%;
-            background: var(--accent-color);
+            background: #ffffff;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
+            color: #000000;
             font-weight: 600;
         }
 
-        /* ===== CONTENT SECTIONS ===== */
         .section {
             margin-bottom: 40px;
         }
 
         .section-title {
-            color: var(--text-primary);
+            color: #ffffff;
             font-weight: 600;
             margin-bottom: 20px;
             font-size: 18px;
@@ -771,20 +712,19 @@
         }
 
         .card {
-            background: var(--card-background);
-            border: 1px solid var(--border-color);
+            background: #2c2c2e;
+            border: 1px solid #48484a;
             border-radius: 12px;
             transition: all 0.3s ease;
             overflow: hidden;
             cursor: pointer;
-            animation: fadeIn 0.3s ease-out;
         }
 
         .card:hover {
-            background: var(--card-hover);
+            background: #3a3a3c;
             transform: translateY(-4px);
-            box-shadow: 0 8px 25px rgba(0, 164, 220, 0.15);
-            border-color: var(--accent-color);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.15);
+            border-color: #ffffff;
         }
 
         .card-image {
@@ -812,12 +752,12 @@
         .card-title {
             font-weight: 600;
             margin-bottom: 8px;
-            color: var(--text-primary);
+            color: #ffffff;
             font-size: 14px;
         }
 
         .card-subtitle {
-            color: var(--text-secondary);
+            color: #ebebf5;
             font-size: 12px;
             margin-bottom: 8px;
         }
@@ -825,22 +765,21 @@
         .progress-bar {
             width: 100%;
             height: 4px;
-            background: var(--border-color);
+            background: #48484a;
             border-radius: 2px;
             overflow: hidden;
         }
 
         .progress-fill {
             height: 100%;
-            background: var(--accent-color);
+            background: #ffffff;
             border-radius: 2px;
             transition: width 0.3s ease;
         }
 
-        /* ===== BUTTONS ===== */
         .btn {
-            background: var(--accent-color);
-            color: white;
+            background: #ffffff;
+            color: #000000;
             border: none;
             border-radius: 8px;
             padding: 12px 24px;
@@ -852,24 +791,21 @@
         }
 
         .btn:hover {
-            background: var(--accent-color-hover);
+            background: #e5e5e7;
             transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 164, 220, 0.3);
         }
 
         .btn-secondary {
             background: transparent;
-            border: 1px solid var(--border-color);
-            color: var(--text-primary);
+            border: 1px solid #48484a;
+            color: #ffffff;
         }
 
         .btn-secondary:hover {
-            background: var(--card-hover);
+            background: #3a3a3c;
             transform: translateY(-2px);
-            box-shadow: none;
         }
 
-        /* ===== STATS CARDS ===== */
         .stats-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -878,8 +814,8 @@
         }
 
         .stat-card {
-            background: var(--card-background);
-            border: 1px solid var(--border-color);
+            background: #2c2c2e;
+            border: 1px solid #48484a;
             border-radius: 12px;
             padding: 24px;
             text-align: center;
@@ -887,35 +823,450 @@
         }
 
         .stat-card:hover {
-            background: var(--card-hover);
+            background: #3a3a3c;
             transform: translateY(-2px);
         }
 
         .stat-number {
             font-size: 32px;
             font-weight: 700;
-            color: var(--accent-color);
+            color: #ffffff;
             margin-bottom: 8px;
         }
 
         .stat-label {
-            color: var(--text-secondary);
+            color: #ebebf5;
             font-size: 14px;
         }
 
-        /* ===== ANIMATIONS ===== */
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        /* Additional base styles for other pages */
+        .movie-card {
+            background: #2c2c2e;
+            border-radius: 12px;
+            padding: 16px;
+            transition: all 0.3s ease;
+            cursor: pointer;
         }
 
-        /* ===== RESPONSIVE DESIGN ===== */
+        .movie-card:hover {
+            background: #3a3a3c;
+            transform: translateY(-4px);
+        }
+
+        .movie-poster {
+            width: 100%;
+            height: 240px;
+            background: #3a3a3c;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+
+        .movie-card h3 {
+            color: #ffffff;
+            margin: 8px 0 4px 0;
+            font-size: 16px;
+        }
+
+        .movie-card p {
+            color: #8e8e93;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .library-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 24px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid #48484a;
+        }
+
+        .library-controls {
+            display: flex;
+            gap: 12px;
+            align-items: center;
+        }
+
+        .filter-select, .sort-select {
+            background: #2c2c2e;
+            border: 1px solid #48484a;
+            color: #ebebf5;
+            padding: 8px 12px;
+            border-radius: 6px;
+            font-size: 14px;
+        }
+
+        .view-toggle {
+            background: #2c2c2e;
+            border: 1px solid #48484a;
+            color: #ebebf5;
+            padding: 8px 12px;
+            border-radius: 6px;
+            cursor: pointer;
+        }
+
+        .library-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px 0;
+        }
+
+        /* More base styles for movie detail, settings, etc. */
+        .movie-detail {
+            max-width: 1200px;
+        }
+
+        .movie-backdrop {
+            background: linear-gradient(135deg, #3a3a3c, #2c2c2e);
+            border-radius: 16px;
+            padding: 32px;
+            margin-bottom: 32px;
+        }
+
+        .movie-info {
+            display: flex;
+            gap: 32px;
+            align-items: flex-start;
+        }
+
+        .movie-poster-large {
+            width: 300px;
+            height: 450px;
+            background: #2c2c2e;
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 72px;
+            flex-shrink: 0;
+        }
+
+        .movie-details h1 {
+            color: #ffffff;
+            font-size: 36px;
+            margin: 0 0 16px 0;
+        }
+
+        .movie-meta {
+            display: flex;
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+
+        .movie-meta span {
+            background: #2c2c2e;
+            padding: 6px 12px;
+            border-radius: 6px;
+            color: #ebebf5;
+            font-size: 14px;
+        }
+
+        .movie-actions {
+            display: flex;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .play-btn {
+            background: #ffffff;
+            color: #000000;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        .action-btn {
+            background: #2c2c2e;
+            color: #ebebf5;
+            border: 1px solid #48484a;
+            padding: 12px 16px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        .movie-description {
+            color: #ebebf5;
+            line-height: 1.6;
+            margin-bottom: 24px;
+            font-size: 16px;
+        }
+
+        .movie-cast h3 {
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .cast-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .cast-list span {
+            background: #2c2c2e;
+            padding: 6px 12px;
+            border-radius: 6px;
+            color: #ebebf5;
+            font-size: 14px;
+        }
+
+        .related-content h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+            gap: 16px;
+        }
+
+        .related-item {
+            text-align: center;
+        }
+
+        .related-poster {
+            width: 100%;
+            height: 200px;
+            background: #2c2c2e;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin-bottom: 8px;
+        }
+
+        .related-item h4 {
+            color: #ffffff;
+            font-size: 14px;
+            margin: 0;
+        }
+
+        /* Settings page styles */
+        .settings-container {
+            display: flex;
+            gap: 32px;
+            max-width: 1200px;
+        }
+
+        .settings-sidebar {
+            width: 250px;
+            flex-shrink: 0;
+        }
+
+        .settings-sidebar h2 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .settings-menu {
+            list-style: none;
+        }
+
+        .settings-menu li {
+            margin-bottom: 8px;
+        }
+
+        .settings-link {
+            display: block;
+            padding: 12px 16px;
+            color: #ebebf5;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: all 0.2s;
+        }
+
+        .settings-link:hover {
+            background: #3a3a3c;
+            color: #ffffff;
+        }
+
+        .settings-link.active {
+            background: #ffffff;
+            color: #000000;
+        }
+
+        .settings-content {
+            flex: 1;
+        }
+
+        .settings-content h1 {
+            color: #ffffff;
+            margin-bottom: 32px;
+        }
+
+        .setting-group {
+            margin-bottom: 32px;
+            padding: 24px;
+            background: #2c2c2e;
+            border-radius: 12px;
+        }
+
+        .setting-group h3 {
+            color: #ffffff;
+            margin-bottom: 20px;
+        }
+
+        .setting-item {
+            margin-bottom: 20px;
+        }
+
+        .setting-item label {
+            display: block;
+            color: #ebebf5;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+
+        .setting-select {
+            width: 100%;
+            padding: 12px;
+            background: #2c2c2e;
+            border: 1px solid #48484a;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 14px;
+        }
+
+        .setting-textarea {
+            width: 100%;
+            min-height: 120px;
+            padding: 12px;
+            background: #2c2c2e;
+            border: 1px solid #48484a;
+            border-radius: 8px;
+            color: #ffffff;
+            font-size: 14px;
+            resize: vertical;
+        }
+
+        .setting-actions {
+            display: flex;
+            gap: 12px;
+            margin-top: 32px;
+        }
+
+        .save-btn {
+            background: #ffffff;
+            color: #000000;
+            border: none;
+            padding: 12px 24px;
+            border-radius: 8px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .cancel-btn {
+            background: #2c2c2e;
+            color: #ebebf5;
+            border: 1px solid #48484a;
+            padding: 12px 24px;
+            border-radius: 8px;
+            cursor: pointer;
+        }
+
+        /* Video player styles */
+        .video-player {
+            width: 100vw;
+            height: 100vh;
+            background: #000000;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .video-screen {
+            width: 100%;
+            height: 100%;
+            position: relative;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a1a, #0d0d0d);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 120px;
+            color: #333;
+        }
+
+        .video-title {
+            font-size: 24px;
+            color: #ebebf5;
+            margin-top: 20px;
+        }
+
+        .player-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            padding: 40px 40px 20px;
+        }
+
+        .progress-handle {
+            position: absolute;
+            top: -4px;
+            width: 14px;
+            height: 14px;
+            background: #ffffff;
+            border-radius: 50%;
+            transform: translateX(-50%);
+        }
+
+        .control-buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .left-controls, .right-controls {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .control-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 4px;
+            transition: background 0.2s;
+        }
+
+        .control-btn:hover {
+            background: rgba(255,255,255,0.2);
+        }
+
+        .play-pause {
+            font-size: 24px;
+        }
+
+        .time-display {
+            color: white;
+            font-size: 14px;
+            margin-left: 8px;
+        }
+
+        /* Responsive design */
         @media (max-width: 768px) {
             .sidebar {
                 width: 200px;
@@ -965,59 +1316,60 @@
 
     <!-- Theme Switcher -->
     <div class="theme-switcher">
-        <h3>🎨 Apple Themes</h3>
+        <h3>🎨 JellyPan Themes</h3>
         <div class="theme-buttons">
-            <button class="theme-btn active" data-theme="space-grey-white">Space Grey (White)</button>
-            <button class="theme-btn" data-theme="midnight-white">Midnight (White)</button>
-            <button class="theme-btn" data-theme="charcoal-white">Charcoal (White)</button>
-            <button class="theme-btn" data-theme="deep-space-white">Deep Space (White)</button>
+            <button class="theme-btn active" data-theme="base">Base Theme</button>
+            <button class="theme-btn" data-theme="enhanced-v1">Enhanced v1 - Deep Space</button>
+            <button class="theme-btn" data-theme="enhanced-v2">Enhanced v2 - Modern Cards</button>
+            <button class="theme-btn" data-theme="enhanced-v3">Enhanced v3 - Premium</button>
+            <button class="theme-btn" data-theme="enhanced-v4">Enhanced v4 - Cinematic</button>
         </div>
     </div>
     <!-- HOME PAGE -->
     <div class="page-content active" id="home-page">
     <div class="app-container">
         <!-- Sidebar Navigation -->
-        <nav class="sidebar">
+        <nav class="mainDrawer navDrawer sidebar">
             <div class="logo">JellyPan</div>
             <ul class="nav-menu">
                 <li class="nav-item">
-                    <a href="#" class="nav-link active">
+                    <a href="#" class="navMenuOption nav-link active navMenuOption-selected">
                         <span class="nav-icon">🏠</span>
                         Home
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="navMenuOption nav-link">
                         <span class="nav-icon">🎬</span>
                         Movies
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="navMenuOption nav-link">
                         <span class="nav-icon">📺</span>
                         TV Shows
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="navMenuOption nav-link">
                         <span class="nav-icon">🎵</span>
                         Music
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="navMenuOption nav-link">
                         <span class="nav-icon">📚</span>
                         Books
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="navMenuOption nav-link">
                         <span class="nav-icon">📁</span>
                         Collections
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="#" class="nav-link">
+                    <a href="#" class="navMenuOption nav-link">
                         <span class="nav-icon">⚙️</span>
                         Settings
                     </a>
@@ -1026,18 +1378,18 @@
         </nav>
 
         <!-- Main Content Area -->
-        <main class="main-content">
+        <main class="mainAnimatedPage main-content">
             <!-- Header -->
             <header class="header">
-                <h1 class="header-title">Dashboard</h1>
+                <h1 class="pageTitle header-title">Dashboard</h1>
                 <div class="header-actions">
-                    <input type="text" class="search-box" placeholder="Search your library...">
+                    <input type="text" class="emby-input search-box" placeholder="Search your library...">
                     <div class="user-avatar">JD</div>
                 </div>
             </header>
 
             <!-- Content Area -->
-            <div class="content-area">
+            <div class="pageContainer content-area">
                 <!-- Stats Section -->
                 <div class="stats-grid">
                     <div class="stat-card">
@@ -1060,35 +1412,41 @@
 
                 <!-- Continue Watching Section -->
                 <section class="section">
-                    <h2 class="section-title">Continue Watching</h2>
-                    <div class="cards-grid">
-                        <div class="card">
-                            <div class="card-image"></div>
+                    <h2 class="sectionTitle section-title">Continue Watching</h2>
+                    <div class="itemsContainer cards-grid">
+                        <div class="card cardBox">
+                            <div class="cardImageContainer card-image">
+                                <div class="cardImage"></div>
+                            </div>
                             <div class="card-content">
                                 <div class="card-title">The Office</div>
                                 <div class="card-subtitle">S3 E12 • 42 min remaining</div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 65%"></div>
+                                <div class="itemProgressBar progress-bar">
+                                    <div class="itemProgressBarForeground progress-fill" style="width: 65%"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-image"></div>
+                        <div class="card cardBox">
+                            <div class="cardImageContainer card-image">
+                                <div class="cardImage"></div>
+                            </div>
                             <div class="card-content">
                                 <div class="card-title">Inception</div>
                                 <div class="card-subtitle">Movie • 1h 23m remaining</div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 35%"></div>
+                                <div class="itemProgressBar progress-bar">
+                                    <div class="itemProgressBarForeground progress-fill" style="width: 35%"></div>
                                 </div>
                             </div>
                         </div>
-                        <div class="card">
-                            <div class="card-image"></div>
+                        <div class="card cardBox">
+                            <div class="cardImageContainer card-image">
+                                <div class="cardImage"></div>
+                            </div>
                             <div class="card-content">
                                 <div class="card-title">Breaking Bad</div>
                                 <div class="card-subtitle">S5 E8 • 12 min remaining</div>
-                                <div class="progress-bar">
-                                    <div class="progress-fill" style="width: 85%"></div>
+                                <div class="itemProgressBar progress-bar">
+                                    <div class="itemProgressBarForeground progress-fill" style="width: 85%"></div>
                                 </div>
                             </div>
                         </div>
@@ -1146,12 +1504,12 @@
 
                 <!-- Quick Actions -->
                 <section class="section">
-                    <h2 class="section-title">Quick Actions</h2>
+                    <h2 class="sectionTitle section-title">Quick Actions</h2>
                     <div style="display: flex; gap: 15px; flex-wrap: wrap;">
-                        <button class="btn">Scan Library</button>
-                        <button class="btn-secondary btn">View Logs</button>
-                        <button class="btn-secondary btn">Manage Users</button>
-                        <button class="btn-secondary btn">Server Settings</button>
+                        <button class="button-flat emby-button raised btn">Scan Library</button>
+                        <button class="button-flat emby-button btn-secondary btn">View Logs</button>
+                        <button class="button-flat emby-button btn-secondary btn">Manage Users</button>
+                        <button class="button-flat emby-button btn-secondary btn">Server Settings</button>
                     </div>
                 </section>
             </div>
@@ -1450,77 +1808,46 @@
     </div>
     </div>
     <script>
-        // Theme definitions
-        const themes = {
-            'space-grey-white': {
-                '--accent-color': '#ffffff',
-                '--accent-color-hover': '#e5e5e7',
-                '--background-primary': '#1c1c1e',
-                '--background-secondary': '#2c2c2e',
-                '--background-tertiary': '#3a3a3c',
-                '--text-primary': '#ffffff',
-                '--text-secondary': '#ebebf5',
-                '--text-muted': '#8e8e93',
-                '--card-background': '#2c2c2e',
-                '--card-hover': '#3a3a3c',
-                '--border-color': '#48484a'
-            },
-            'midnight-white': {
-                '--accent-color': '#ffffff',
-                '--accent-color-hover': '#e5e5e7',
-                '--background-primary': '#000000',
-                '--background-secondary': '#1c1c1e',
-                '--background-tertiary': '#2c2c2e',
-                '--text-primary': '#ffffff',
-                '--text-secondary': '#f2f2f7',
-                '--text-muted': '#8e8e93',
-                '--card-background': '#1c1c1e',
-                '--card-hover': '#2c2c2e',
-                '--border-color': '#38383a'
-            },
-            'charcoal-white': {
-                '--accent-color': '#ffffff',
-                '--accent-color-hover': '#e5e5e7',
-                '--background-primary': '#0d0d0d',
-                '--background-secondary': '#1a1a1a',
-                '--background-tertiary': '#2a2a2a',
-                '--text-primary': '#ffffff',
-                '--text-secondary': '#e5e5e7',
-                '--text-muted': '#8e8e93',
-                '--card-background': '#1a1a1a',
-                '--card-hover': '#2a2a2a',
-                '--border-color': '#3a3a3c'
-            },
-            'deep-space-white': {
-                '--accent-color': '#ffffff',
-                '--accent-color-hover': '#e5e5e7',
-                '--background-primary': '#050505',
-                '--background-secondary': '#0f0f0f',
-                '--background-tertiary': '#1a1a1a',
-                '--text-primary': '#ffffff',
-                '--text-secondary': '#f2f2f7',
-                '--text-muted': '#8e8e93',
-                '--card-background': '#0f0f0f',
-                '--card-hover': '#1a1a1a',
-                '--border-color': '#2a2a2a'
-            }
+        // Theme file mappings
+        const themeFiles = {
+            'base': 'jellypan-theme.css',
+            'enhanced-v1': 'jellypan-enhanced-v1.css',
+            'enhanced-v2': 'jellypan-enhanced-v2.css',
+            'enhanced-v3': 'jellypan-enhanced-v3.css',
+            'enhanced-v4': 'jellypan-enhanced-v4.css'
         };
 
         // Theme switcher functionality
         function switchTheme(themeName) {
-            const theme = themes[themeName];
-            const root = document.documentElement;
+            // Remove existing theme link
+            const existingTheme = document.getElementById('current-theme');
+            if (existingTheme) {
+                existingTheme.remove();
+            }
             
-            // Apply theme variables
-            Object.entries(theme).forEach(([property, value]) => {
-                root.style.setProperty(property, value);
-            });
+            // Create new theme link
+            const themeLink = document.createElement('link');
+            themeLink.id = 'current-theme';
+            themeLink.rel = 'stylesheet';
+            themeLink.href = themeFiles[themeName];
+            
+            // Add to head
+            document.head.appendChild(themeLink);
             
             // Update active button
             document.querySelectorAll('.theme-btn').forEach(btn => {
                 btn.classList.remove('active');
             });
             document.querySelector(`[data-theme="${themeName}"]`).classList.add('active');
+            
+            // Store current theme in localStorage
+            localStorage.setItem('selectedTheme', themeName);
+        }
+
+        // Load saved theme on page load
+        function loadSavedTheme() {
+            const savedTheme = localStorage.getItem('selectedTheme') || 'base';
+            switchTheme(savedTheme);
         }
 
         // Page switching functionality
@@ -1542,6 +1869,9 @@
 
         // Add event listeners
         document.addEventListener('DOMContentLoaded', function() {
+            // Load saved theme first
+            loadSavedTheme();
+            
             // Theme switcher
             document.querySelectorAll('.theme-btn').forEach(button => {
                 button.addEventListener('click', function() {
