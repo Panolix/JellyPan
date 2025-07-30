@@ -72,3 +72,71 @@
     --border-color: #515154;
 }
 */
+
+/* ===== APPLE CHARCOAL (Blue) ===== */
+/*
+:root {
+    --accent-color: #007aff;
+    --accent-color-hover: #0056cc;
+    --background-primary: #0d0d0d;
+    --background-secondary: #1a1a1a;
+    --background-tertiary: #2a2a2a;
+    --text-primary: #ffffff;
+    --text-secondary: #e5e5e7;
+    --text-muted: #8e8e93;
+    --card-background: #1a1a1a;
+    --card-hover: #2a2a2a;
+    --border-color: #3a3a3c;
+}
+*/
+
+/* ===== APPLE SLATE (Purple) ===== */
+/*
+:root {
+    --accent-color: #aa5cc3;
+    --accent-color-hover: #9644a8;
+    --background-primary: #0f0f10;
+    --background-secondary: #1f1f21;
+    --background-tertiary: #2f2f32;
+    --text-primary: #ffffff;
+    --text-secondary: #ebebf5;
+    --text-muted: #8e8e93;
+    --card-background: #1f1f21;
+    --card-hover: #2f2f32;
+    --border-color: #3f3f42;
+}
+*/
+
+/* ===== APPLE DEEP SPACE (Blue) ===== */
+/*
+:root {
+    --accent-color: #007aff;
+    --accent-color-hover: #0056cc;
+    --background-primary: #050505;
+    --background-secondary: #0f0f0f;
+    --background-tertiary: #1a1a1a;
+    --text-primary: #ffffff;
+    --text-secondary: #f2f2f7;
+    --text-muted: #8e8e93;
+    --card-background: #0f0f0f;
+    --card-hover: #1a1a1a;
+    --border-color: #2a2a2a;
+}
+*/
+
+/* ===== APPLE STORM (Purple) ===== */
+/*
+:root {
+    --accent-color: #aa5cc3;
+    --accent-color-hover: #9644a8;
+    --background-primary: #121214;
+    --background-secondary: #22222a;
+    --background-tertiary: #32323a;
+    --text-primary: #ffffff;
+    --text-secondary: #d2d2d7;
+    --text-muted: #8e8e93;
+    --card-background: #22222a;
+    --card-hover: #32323a;
+    --border-color: #42424a;
+}
+*/
