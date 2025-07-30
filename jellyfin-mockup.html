@@ -452,10 +452,10 @@
     <div class="theme-switcher">
         <h3>🎨 Apple Themes</h3>
         <div class="theme-buttons">
-            <button class="theme-btn active" data-theme="space-grey">Space Grey</button>
-            <button class="theme-btn" data-theme="silver">Silver</button>
-            <button class="theme-btn" data-theme="midnight">Midnight</button>
-            <button class="theme-btn" data-theme="graphite">Graphite</button>
+            <button class="theme-btn active" data-theme="space-grey-blue">Space Grey (Blue)</button>
+            <button class="theme-btn" data-theme="midnight-blue">Midnight (Blue)</button>
+            <button class="theme-btn" data-theme="space-grey-purple">Space Grey (Purple)</button>
+            <button class="theme-btn" data-theme="graphite-purple">Graphite (Purple)</button>
         </div>
     </div>
     <div class="app-container">
@@ -643,7 +643,7 @@
     <script>
         // Theme definitions
         const themes = {
-            'space-grey': {
+            'space-grey-blue': {
                 '--accent-color': '#007aff',
                 '--accent-color-hover': '#0056cc',
                 '--background-primary': '#1c1c1e',
@@ -656,22 +656,9 @@
                 '--card-hover': '#3a3a3c',
                 '--border-color': '#48484a'
             },
-            'silver': {
+            'midnight-blue': {
                 '--accent-color': '#007aff',
                 '--accent-color-hover': '#0056cc',
-                '--background-primary': '#f2f2f7',
-                '--background-secondary': '#ffffff',
-                '--background-tertiary': '#e5e5ea',
-                '--text-primary': '#000000',
-                '--text-secondary': '#1c1c1e',
-                '--text-muted': '#8e8e93',
-                '--card-background': '#ffffff',
-                '--card-hover': '#f2f2f7',
-                '--border-color': '#c6c6c8'
-            },
-            'midnight': {
-                '--accent-color': '#30d158',
-                '--accent-color-hover': '#28cd4f',
                 '--background-primary': '#000000',
                 '--background-secondary': '#1c1c1e',
                 '--background-tertiary': '#2c2c2e',
@@ -682,9 +669,22 @@
                 '--card-hover': '#2c2c2e',
                 '--border-color': '#38383a'
             },
-            'graphite': {
-                '--accent-color': '#ff9f0a',
-                '--accent-color-hover': '#ff8c00',
+            'space-grey-purple': {
+                '--accent-color': '#aa5cc3',
+                '--accent-color-hover': '#9644a8',
+                '--background-primary': '#1c1c1e',
+                '--background-secondary': '#2c2c2e',
+                '--background-tertiary': '#3a3a3c',
+                '--text-primary': '#ffffff',
+                '--text-secondary': '#ebebf5',
+                '--text-muted': '#8e8e93',
+                '--card-background': '#2c2c2e',
+                '--card-hover': '#3a3a3c',
+                '--border-color': '#48484a'
+            },
+            'graphite-purple': {
+                '--accent-color': '#aa5cc3',
+                '--accent-color-hover': '#9644a8',
                 '--background-primary': '#1d1d1f',
                 '--background-secondary': '#2d2d30',
                 '--background-tertiary': '#424245',
