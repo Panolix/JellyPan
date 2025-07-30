@@ -1096,6 +1096,129 @@
         </main>
     </div>
     </div>
+
+    <!-- VIDEO PLAYER PAGE -->
+    <div class="page-content" id="player-page">
+        <div class="video-player">
+            <div class="video-screen">
+                <div class="video-placeholder">
+                    🎬
+                    <div class="video-title">The Matrix</div>
+                </div>
+                <div class="player-controls">
+                    <div class="progress-bar">
+                        <div class="progress-fill" style="width: 35%"></div>
+                        <div class="progress-handle" style="left: 35%"></div>
+                    </div>
+                    <div class="control-buttons">
+                        <div class="left-controls">
+                            <button class="control-btn">⏮️</button>
+                            <button class="control-btn play-pause">⏸️</button>
+                            <button class="control-btn">⏭️</button>
+                            <span class="time-display">45:32 / 2:16:40</span>
+                        </div>
+                        <div class="right-controls">
+                            <button class="control-btn">🔊</button>
+                            <button class="control-btn">⚙️</button>
+                            <button class="control-btn">📺</button>
+                            <button class="control-btn">⛶</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- SETTINGS PAGE -->
+    <div class="page-content" id="settings-page">
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>Jellyfin</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">🏠 Home</a></li>
+                <li><a href="#" class="nav-link">📚 Libraries</a></li>
+                <li><a href="#" class="nav-link">🎵 Music</a></li>
+                <li><a href="#" class="nav-link">📺 Live TV</a></li>
+                <li><a href="#" class="nav-link active">⚙️ Settings</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="breadcrumb">
+                    <span>Settings</span> > <span>Display</span>
+                </div>
+                <div class="user-controls">
+                    <button class="icon-btn">🔍</button>
+                    <button class="icon-btn">👤</button>
+                </div>
+            </header>
+            
+            <div class="content-area">
+                <div class="settings-container">
+                    <div class="settings-sidebar">
+                        <h2>Settings</h2>
+                        <ul class="settings-menu">
+                            <li><a href="#" class="settings-link active">🎨 Display</a></li>
+                            <li><a href="#" class="settings-link">🔊 Playback</a></li>
+                            <li><a href="#" class="settings-link">📱 Devices</a></li>
+                            <li><a href="#" class="settings-link">👤 Profile</a></li>
+                            <li><a href="#" class="settings-link">🔐 Security</a></li>
+                            <li><a href="#" class="settings-link">📊 Server</a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="settings-content">
+                        <h1>Display Settings</h1>
+                        
+                        <div class="setting-group">
+                            <h3>Theme</h3>
+                            <div class="setting-item">
+                                <label>Theme Mode</label>
+                                <select class="setting-select">
+                                    <option>Dark</option>
+                                    <option>Light</option>
+                                    <option>Auto</option>
+                                </select>
+                            </div>
+                            <div class="setting-item">
+                                <label>Custom CSS</label>
+                                <textarea class="setting-textarea" placeholder="Enter custom CSS here..."></textarea>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-group">
+                            <h3>Language & Region</h3>
+                            <div class="setting-item">
+                                <label>Display Language</label>
+                                <select class="setting-select">
+                                    <option>English</option>
+                                    <option>Spanish</option>
+                                    <option>French</option>
+                                </select>
+                            </div>
+                            <div class="setting-item">
+                                <label>Date Format</label>
+                                <select class="setting-select">
+                                    <option>MM/DD/YYYY</option>
+                                    <option>DD/MM/YYYY</option>
+                                    <option>YYYY-MM-DD</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="setting-actions">
+                            <button class="save-btn">Save Changes</button>
+                            <button class="cancel-btn">Cancel</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+    </div>
     <script>
         // Theme definitions
         const themes = {
