@@ -530,6 +530,8 @@
             <button class="theme-btn" data-theme="deep-space-white">Deep Space (White)</button>
         </div>
     </div>
+    <!-- HOME PAGE -->
+    <div class="page-content active" id="home-page">
     <div class="app-container">
         <!-- Sidebar Navigation -->
         <nav class="sidebar">
@@ -711,6 +713,90 @@
                 </section>
             </div>
         </main>
+    </div>
+    </div>
+
+    <!-- LIBRARY PAGE -->
+    <div class="page-content" id="library-page">
+    <div class="app-container">
+        <nav class="sidebar">
+            <div class="logo">
+                <h2>Jellyfin</h2>
+            </div>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">🏠 Home</a></li>
+                <li><a href="#" class="nav-link active">📚 Libraries</a></li>
+                <li><a href="#" class="nav-link">🎵 Music</a></li>
+                <li><a href="#" class="nav-link">📺 Live TV</a></li>
+                <li><a href="#" class="nav-link">⚙️ Settings</a></li>
+            </ul>
+        </nav>
+        
+        <main class="main-content">
+            <header class="top-bar">
+                <div class="breadcrumb">
+                    <span>Libraries</span> > <span>Movies</span>
+                </div>
+                <div class="user-controls">
+                    <button class="icon-btn">🔍</button>
+                    <button class="icon-btn">👤</button>
+                </div>
+            </header>
+            
+            <div class="content-area">
+                <div class="library-header">
+                    <h1>Movie Library</h1>
+                    <div class="library-controls">
+                        <select class="filter-select">
+                            <option>All Genres</option>
+                            <option>Action</option>
+                            <option>Comedy</option>
+                            <option>Drama</option>
+                        </select>
+                        <select class="sort-select">
+                            <option>Sort by Name</option>
+                            <option>Sort by Date Added</option>
+                            <option>Sort by Rating</option>
+                        </select>
+                        <button class="view-toggle">⊞</button>
+                    </div>
+                </div>
+                
+                <div class="library-grid">
+                    <div class="movie-card">
+                        <div class="movie-poster">🎬</div>
+                        <h3>The Matrix</h3>
+                        <p>1999 • Action</p>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">🎭</div>
+                        <h3>Inception</h3>
+                        <p>2010 • Sci-Fi</p>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">🦸</div>
+                        <h3>The Dark Knight</h3>
+                        <p>2008 • Action</p>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">🚀</div>
+                        <h3>Interstellar</h3>
+                        <p>2014 • Sci-Fi</p>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">🎪</div>
+                        <h3>Joker</h3>
+                        <p>2019 • Drama</p>
+                    </div>
+                    <div class="movie-card">
+                        <div class="movie-poster">🏰</div>
+                        <h3>Lord of the Rings</h3>
+                        <p>2001 • Fantasy</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
     </div>
     <script>
         // Theme definitions
