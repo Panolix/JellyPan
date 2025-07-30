@@ -52,8 +52,68 @@
         
         .theme-btn.active {
             background: var(--accent-color);
-            color: white;
+            color: var(--background-primary);
             border-color: var(--accent-color);
+        }
+
+        /* Page Navigation */
+        .page-nav {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 10000;
+            background: var(--card-background);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 16px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(20px);
+        }
+        
+        .page-nav h3 {
+            margin: 0 0 12px 0;
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+        }
+        
+        .page-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .page-btn {
+            padding: 8px 12px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--background-secondary);
+            color: var(--text-secondary);
+            cursor: pointer;
+            font-size: 12px;
+            transition: all 0.2s ease;
+            min-width: 120px;
+            text-align: left;
+        }
+        
+        .page-btn:hover {
+            background: var(--card-hover);
+            border-color: var(--accent-color);
+        }
+        
+        .page-btn.active {
+            background: var(--accent-color);
+            color: var(--background-primary);
+            border-color: var(--accent-color);
+        }
+
+        /* Page Content */
+        .page-content {
+            display: none;
+        }
+        
+        .page-content.active {
+            display: block;
         }
         /* Include the JellyPan theme CSS */
         /*
@@ -448,18 +508,26 @@
     </style>
 </head>
 <body>
+    <!-- Page Navigation -->
+    <div class="page-nav">
+        <h3>📱 Pages</h3>
+        <div class="page-buttons">
+            <button class="page-btn active" data-page="home">Home</button>
+            <button class="page-btn" data-page="library">Library</button>
+            <button class="page-btn" data-page="movie-detail">Movie Detail</button>
+            <button class="page-btn" data-page="player">Video Player</button>
+            <button class="page-btn" data-page="settings">Settings</button>
+        </div>
+    </div>
+
     <!-- Theme Switcher -->
     <div class="theme-switcher">
         <h3>🎨 Apple Themes</h3>
         <div class="theme-buttons">
-            <button class="theme-btn active" data-theme="space-grey-blue">Space Grey (Blue)</button>
-            <button class="theme-btn" data-theme="midnight-blue">Midnight (Blue)</button>
-            <button class="theme-btn" data-theme="charcoal-blue">Charcoal (Blue)</button>
-            <button class="theme-btn" data-theme="deep-space-blue">Deep Space (Blue)</button>
-            <button class="theme-btn" data-theme="space-grey-purple">Space Grey (Purple)</button>
-            <button class="theme-btn" data-theme="graphite-purple">Graphite (Purple)</button>
-            <button class="theme-btn" data-theme="slate-purple">Slate (Purple)</button>
-            <button class="theme-btn" data-theme="storm-purple">Storm (Purple)</button>
+            <button class="theme-btn active" data-theme="space-grey-white">Space Grey (White)</button>
+            <button class="theme-btn" data-theme="midnight-white">Midnight (White)</button>
+            <button class="theme-btn" data-theme="charcoal-white">Charcoal (White)</button>
+            <button class="theme-btn" data-theme="deep-space-white">Deep Space (White)</button>
         </div>
     </div>
     <div class="app-container">
